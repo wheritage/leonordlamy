@@ -330,6 +330,19 @@
         .sim-toggle.active { background: #C0C0C0; }
         .sim-toggle.active .sim-toggle-knob { left: 22px; background: #000000; }
 
+
+
+        /* ─── Insurance comparator (service modal) ─── */
+        .ic-tab {
+            transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+        }
+        .ic-tab.active {
+            background-color: #C0C0C0;
+            color: #000000;
+            border-color: #C0C0C0;
+        }
+        #ic-chart-svg { display: block; width: 100%; height: auto; }
+
         #sim-chart-wrap { position: relative; }
         #sim-chart-svg { display: block; width: 100%; height: auto; }
         #sim-tooltip {
@@ -449,7 +462,23 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
 
-                <div class="reveal service-card bg-brand-darker border border-brand-gray p-8 md:p-10 hover:border-brand-silver/30 transition-all duration-500 group relative overflow-hidden cursor-pointer" data-delay="1" data-service="patrimoine" role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="reveal service-card bg-brand-darker border border-brand-gray p-8 md:p-10 hover:border-brand-silver/30 transition-all duration-500 group relative overflow-hidden cursor-pointer" data-delay="1" data-service="assurance" role="button" tabindex="0" aria-haspopup="dialog">
+                    <div class="card-glow"></div>
+                    <div class="absolute top-0 right-0 w-24 h-24 md:w-32 md:h-32 bg-white/5 rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-700"></div>
+                    <div class="text-brand-silver mb-6 group-hover:text-white transition-colors">
+                        <svg class="w-10 h-10 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-xl md:text-2xl text-white mb-4">Assurance & Protection</h3>
+                    <p class="text-gray-400 font-light leading-relaxed mb-6 text-sm md:text-base">Le socle de toute planification financière. Sécurisez votre niveau de vie, protégez votre famille et garantissez la pérennité de vos affaires.</p>
+                    <ul class="space-y-2 text-xs md:text-sm text-gray-500 mb-6">
+                        <li class="flex items-start"><span class="text-brand-silver mr-2">✓</span> Assurance vie et invalidité</li>
+                        <li class="flex items-start"><span class="text-brand-silver mr-2">✓</span> Protection maladies graves</li>
+                        <li class="flex items-start"><span class="text-brand-silver mr-2">✓</span> Assurance partenariat et rachat</li>
+                    </ul>
+                    <span class="inline-flex items-center gap-1.5 text-brand-silver text-xs uppercase tracking-widest font-semibold group-hover:gap-2.5 transition-all">En savoir plus <span aria-hidden="true">→</span></span>
+                </div>
+
+                <div class="reveal service-card bg-brand-darker border border-brand-gray p-8 md:p-10 hover:border-brand-silver/30 transition-all duration-500 group relative overflow-hidden cursor-pointer" data-delay="2" data-service="patrimoine" role="button" tabindex="0" aria-haspopup="dialog">
                     <div class="card-glow"></div>
                     <div class="absolute top-0 right-0 w-24 h-24 md:w-32 md:h-32 bg-white/5 rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-700"></div>
                     <div class="text-brand-silver mb-6 group-hover:text-white transition-colors">
@@ -465,7 +494,7 @@
                     <span class="inline-flex items-center gap-1.5 text-brand-silver text-xs uppercase tracking-widest font-semibold group-hover:gap-2.5 transition-all">En savoir plus <span aria-hidden="true">→</span></span>
                 </div>
 
-                <div class="reveal service-card bg-brand-darker border border-brand-gray p-8 md:p-10 hover:border-brand-silver/30 transition-all duration-500 group relative overflow-hidden cursor-pointer" data-delay="2" data-service="protection-epargne" role="button" tabindex="0" aria-haspopup="dialog">
+                <div class="reveal service-card bg-brand-darker border border-brand-gray p-8 md:p-10 hover:border-brand-silver/30 transition-all duration-500 group relative overflow-hidden cursor-pointer" data-delay="3" data-service="protection-epargne" role="button" tabindex="0" aria-haspopup="dialog">
                     <div class="card-glow"></div>
                     <div class="absolute top-0 right-0 w-24 h-24 md:w-32 md:h-32 bg-white/5 rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-700"></div>
                     <div class="text-brand-silver mb-6 group-hover:text-white transition-colors">
@@ -476,22 +505,6 @@
                     <ul class="space-y-2 text-xs md:text-sm text-gray-500 mb-6">
                         <li class="flex items-start"><span class="text-brand-silver mr-2">✓</span> Stratégie AMG</li>
                         <li class="flex items-start"><span class="text-brand-silver mr-2">✓</span> Remboursement des primes en cas de non utilisation de la protection</li>
-                    </ul>
-                    <span class="inline-flex items-center gap-1.5 text-brand-silver text-xs uppercase tracking-widest font-semibold group-hover:gap-2.5 transition-all">En savoir plus <span aria-hidden="true">→</span></span>
-                </div>
-
-                <div class="reveal service-card bg-brand-darker border border-brand-gray p-8 md:p-10 hover:border-brand-silver/30 transition-all duration-500 group relative overflow-hidden cursor-pointer" data-delay="3" data-service="assurance" role="button" tabindex="0" aria-haspopup="dialog">
-                    <div class="card-glow"></div>
-                    <div class="absolute top-0 right-0 w-24 h-24 md:w-32 md:h-32 bg-white/5 rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-700"></div>
-                    <div class="text-brand-silver mb-6 group-hover:text-white transition-colors">
-                        <svg class="w-10 h-10 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                    </div>
-                    <h3 class="font-serif text-xl md:text-2xl text-white mb-4">Assurance & Protection</h3>
-                    <p class="text-gray-400 font-light leading-relaxed mb-6 text-sm md:text-base">Le socle de toute planification financière. Sécurisez votre niveau de vie, protégez votre famille et garantissez la pérennité de vos affaires.</p>
-                    <ul class="space-y-2 text-xs md:text-sm text-gray-500 mb-6">
-                        <li class="flex items-start"><span class="text-brand-silver mr-2">✓</span> Assurance vie et invalidité</li>
-                        <li class="flex items-start"><span class="text-brand-silver mr-2">✓</span> Protection maladies graves</li>
-                        <li class="flex items-start"><span class="text-brand-silver mr-2">✓</span> Assurance partenariat et rachat</li>
                     </ul>
                     <span class="inline-flex items-center gap-1.5 text-brand-silver text-xs uppercase tracking-widest font-semibold group-hover:gap-2.5 transition-all">En savoir plus <span aria-hidden="true">→</span></span>
                 </div>
@@ -826,7 +839,7 @@
     <!-- ═══════════ SERVICE DETAIL MODAL ═══════════ -->
     <div id="service-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 md:p-6" aria-hidden="true" role="dialog" aria-modal="true">
         <div id="service-modal-backdrop" class="absolute inset-0 bg-black/85 backdrop-blur-sm"></div>
-        <div id="service-modal-panel" class="relative bg-brand-darker border border-brand-silver/20 rounded-xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-[0_0_60px_rgba(0,0,0,0.9)] opacity-0 scale-95 transition-all duration-300">
+        <div id="service-modal-panel" class="relative bg-brand-darker border border-brand-silver/20 rounded-xl max-w-3xl w-full max-h-[85vh] overflow-y-auto shadow-[0_0_60px_rgba(0,0,0,0.9)] opacity-0 scale-95 transition-all duration-300">
             <button id="service-modal-close" aria-label="Fermer" class="absolute top-4 right-4 md:top-6 md:right-6 w-9 h-9 rounded-full border border-brand-gray flex items-center justify-center text-gray-400 hover:text-white hover:border-brand-silver transition-colors z-10 bg-brand-darker">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
@@ -835,6 +848,53 @@
                 <h3 id="service-modal-title" class="font-serif text-2xl md:text-3xl text-white mb-6"></h3>
                 <p id="service-modal-intro" class="text-gray-400 font-light leading-relaxed mb-8 text-sm md:text-base"></p>
                 <ul id="service-modal-list" class="space-y-3 text-sm md:text-base text-gray-300 mb-8"></ul>
+                <div id="service-modal-comparator" class="hidden mb-10">
+                    <p class="text-gray-500 text-xs mb-6 leading-relaxed">Cliquez sur une protection pour voir la portion du graphique qu'elle couvre.</p>
+                    <div id="ic-tabs" class="flex flex-wrap gap-2 mb-6">
+                        <button type="button" data-ictype="temp" class="ic-tab flex-1 min-w-[45%] sm:min-w-0 px-3 py-2.5 rounded border border-brand-gray text-xs sm:text-sm uppercase tracking-widest font-medium text-gray-400 text-center">Temporaire</button>
+                        <button type="button" data-ictype="wholelife" class="ic-tab flex-1 min-w-[45%] sm:min-w-0 px-3 py-2.5 rounded border border-brand-gray text-xs sm:text-sm uppercase tracking-widest font-medium text-gray-400 text-center">Permanente</button>
+                        <button type="button" data-ictype="iapar" class="ic-tab flex-1 min-w-[45%] sm:min-w-0 px-3 py-2.5 rounded border border-brand-gray text-xs sm:text-sm uppercase tracking-widest font-medium text-gray-400 text-center">Participative</button>
+                        <button type="button" data-ictype="universal" class="ic-tab flex-1 min-w-[45%] sm:min-w-0 px-3 py-2.5 rounded border border-brand-gray text-xs sm:text-sm uppercase tracking-widest font-medium text-gray-400 text-center">Vie Universelle</button>
+                    </div>
+
+                    <p id="ic-tagline" class="text-brand-silver text-sm md:text-base font-medium mb-3"></p>
+                    <p id="ic-description" class="text-gray-400 font-light leading-relaxed text-sm mb-6"></p>
+
+                    <div id="ic-chart-wrap" class="relative mb-2 bg-brand-dark border border-brand-gray/60 rounded-lg p-4">
+                        <svg id="ic-chart-svg" viewBox="0 0 640 220" class="w-full h-auto select-none" preserveAspectRatio="none"></svg>
+                        <div id="ic-chart-legend" class="flex flex-wrap items-center gap-x-5 gap-y-2 mt-3 px-1"></div>
+                    </div>
+                    <p id="ic-zone-caption" class="text-gray-400 text-xs md:text-sm mb-2 mt-3 leading-relaxed"></p>
+                    <p class="text-gray-600 text-xs mb-8 leading-relaxed">Illustration conceptuelle de l'évolution de vos besoins de protection dans le temps — proportions non garanties, à titre indicatif seulement.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <p class="text-white text-xs uppercase tracking-widest font-semibold mb-3">Comment en bénéficier</p>
+                            <ul id="ic-benefits" class="space-y-2.5 text-sm text-gray-300"></ul>
+                        </div>
+                        <div>
+                            <p class="text-white text-xs uppercase tracking-widest font-semibold mb-3">Stratégies possibles</p>
+                            <ul id="ic-strategies" class="space-y-2.5 text-sm text-gray-300"></ul>
+                        </div>
+                    </div>
+
+                    <p class="text-white text-xs uppercase tracking-widest font-semibold mb-3">Comparer les 4 protections</p>
+                    <div id="ic-compare-table" class="border border-brand-gray/60 rounded-lg overflow-hidden text-xs sm:text-sm"></div>
+                </div>
+                <div id="service-modal-retraite" class="hidden mb-10">
+                    <div id="rt-tabs" class="flex flex-wrap gap-2 mb-6">
+                        <button type="button" data-rttype="ordre" class="ic-tab flex-1 min-w-[45%] sm:min-w-0 px-3 py-2.5 rounded border border-brand-gray text-xs sm:text-sm uppercase tracking-widest font-medium text-gray-400 text-center">Décaissement</button>
+                        <button type="button" data-rttype="fractionnement" class="ic-tab flex-1 min-w-[45%] sm:min-w-0 px-3 py-2.5 rounded border border-brand-gray text-xs sm:text-sm uppercase tracking-widest font-medium text-gray-400 text-center">Fractionnement</button>
+                        <button type="button" data-rttype="gouvernement" class="ic-tab flex-1 min-w-[45%] sm:min-w-0 px-3 py-2.5 rounded border border-brand-gray text-xs sm:text-sm uppercase tracking-widest font-medium text-gray-400 text-center">RRQ / PSV</button>
+                        <button type="button" data-rttype="succession" class="ic-tab flex-1 min-w-[45%] sm:min-w-0 px-3 py-2.5 rounded border border-brand-gray text-xs sm:text-sm uppercase tracking-widest font-medium text-gray-400 text-center">Transfert</button>
+                    </div>
+
+                    <p id="rt-tagline" class="text-brand-silver text-sm md:text-base font-medium mb-3"></p>
+                    <p id="rt-description" class="text-gray-400 font-light leading-relaxed text-sm mb-6"></p>
+
+                    <p class="text-white text-xs uppercase tracking-widest font-semibold mb-3">À retenir</p>
+                    <ul id="rt-points" class="space-y-2.5 text-sm text-gray-300"></ul>
+                </div>
                 <p id="service-modal-closing" class="text-gray-400 font-light leading-relaxed text-sm md:text-base italic mb-10"></p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#contact" id="service-modal-cta" class="glow-silver shine-btn inline-flex items-center justify-center px-8 py-3.5 bg-brand-silver text-brand-darker text-sm font-bold uppercase tracking-widest rounded hover:bg-white transition-colors relative overflow-hidden">
@@ -1133,7 +1193,7 @@
                     "Coordination avec votre situation fiscale — REER, CELI, CELIAPP, non enregistré, compte de société"
                 ],
                 closing: "Que vous partiez de zéro ou que vous souhaitiez optimiser un portefeuille existant, l'objectif reste le même : faire croître votre capital avec discipline, pas avec des paris.",
-                showSim: false
+                showSim: true
             },
             'protection-epargne': {
                 title: "Stratégies de Protection de l'Épargne",
@@ -1150,31 +1210,389 @@
             },
             'assurance': {
                 title: "Assurance & Protection",
-                intro: "Le socle de toute planification financière sérieuse. Sans protection adéquate, même la meilleure stratégie d'investissement reste vulnérable à un seul événement imprévu.",
-                points: [
-                    "Assurance vie temporaire et permanente, adaptée à votre stade de vie et vos obligations",
-                    "Assurance invalidité pour protéger votre capacité à générer un revenu — votre actif le plus précieux",
-                    "Protection maladies graves, avec options de remboursement de primes",
-                    "Assurance partenariat et convention de rachat pour entrepreneurs et actionnaires",
-                    "Structures corporatives — assurance détenue par la société — pour optimiser la fiscalité"
-                ],
-                closing: "Chaque police est bâtie sur mesure — jamais un produit générique imposé à votre situation.",
-                showSim: false
+                intro: "Le socle de toute planification financière sérieuse. Sans protection adéquate, même la meilleure stratégie d'investissement reste vulnérable à un seul événement imprévu. Explorez les quatre grandes familles de protection ci-dessous.",
+                points: [],
+                closing: "Peu importe le type choisi, la bonne police est toujours celle bâtie sur mesure pour votre situation — jamais un produit générique.",
+                showSim: false,
+                comparator: true
             },
             'retraite': {
                 title: "Planification de la Retraite",
-                intro: "Se rendre à la retraite est une chose. Savoir exactement comment en vivre — et pour combien de temps — en est une autre.",
-                points: [
-                    "Projections de retraite détaillées basées sur votre épargne actuelle, vos objectifs et votre espérance de vie",
-                    "Stratégies de décaissement optimisées — ordre de retrait entre REER, CELI, comptes non enregistrés et de société",
-                    "Fractionnement du revenu de retraite entre conjoints pour réduire le fardeau fiscal",
-                    "Coordination avec les prestations gouvernementales (RRQ, PSV) pour maximiser votre revenu net",
-                    "Planification du transfert de patrimoine et minimisation de l'impôt au décès"
-                ],
+                intro: "Se rendre à la retraite est une chose. Savoir exactement comment en vivre — et pour combien de temps — en est une autre. Explorez ci-dessous les grands leviers qui déterminent combien vous garderez, net d'impôt.",
+                points: [],
                 closing: "Une retraite bien planifiée, c'est la liberté de choisir — pas de subir.",
-                showSim: false
+                showSim: false,
+                retraiteOptions: true
             }
         };
+
+
+        /* ═════ INSURANCE COMPARATOR ═════ */
+        const IC_ORDER = ['temp', 'wholelife', 'iapar', 'universal'];
+
+        const IC_TYPES = {
+            'temp': {
+                label: 'Temporaire',
+                tagline: "Protection maximale au coût le plus bas, pour une durée déterminée.",
+                description: "Un capital-décès fixe, garanti pendant une durée choisie — 10, 15, 20, 30 ou 40 ans — au coût le plus abordable du marché. Une fois le terme terminé, la protection prend fin, à moins d'être renouvelée ou convertie.",
+                benefits: [
+                    "Coût mensuel le plus bas pour un même montant de protection",
+                    "Idéale pour un besoin avec une date de fin connue — hypothèque, prêt, revenu familial pendant que les enfants sont jeunes",
+                    "Convertible en police permanente plus tard, sans nouvelle preuve d'assurabilité"
+                ],
+                strategies: [
+                    "Garantir l'assurabilité future, peu importe les événements de santé à venir",
+                    "Combinée à une petite police permanente pour couvrir le besoin qui, lui, ne disparaît jamais"
+                ],
+                compare: { duree: '10 à 40 ans', prime: 'La plus basse', rachat: 'Aucune', capital: 'Fixe pendant le terme' }
+            },
+            'wholelife': {
+                label: 'Permanente',
+                tagline: "Protection à vie avec primes et capital garantis, pour une prévisibilité totale.",
+                description: "Une protection qui dure toute la vie, avec des primes et un capital-décès fixés dès la souscription. Une valeur de rachat garantie s'accumule lentement, sans dépendre des marchés ni des résultats de l'assureur.",
+                benefits: [
+                    "Garanties contractuelles — aucune surprise, coûts et capital connus d'avance",
+                    "Idéale pour un besoin permanent précis : frais finaux, héritage",
+                    "Valeur de rachat garantie, accessible en cas de besoin"
+                ],
+                strategies: [
+                    "Utilisée comme collatéral pour un prêt bancaire",
+                    "Planification successorale simple, sans surprise pour vos héritiers"
+                ],
+                compare: { duree: 'À vie', prime: 'Fixe et garantie', rachat: 'Garantie, croissance lente', capital: 'Fixe' }
+            },
+            'iapar': {
+                label: 'Participative',
+                tagline: "Protection à vie dont le capital croît grâce à la participation aux excédents.",
+                description: "Une protection permanente dont le capital-décès et la valeur de rachat augmentent avec le temps grâce à la participation aux excédents de l'assureur. La croissance s'accumule à l'abri de l'impôt.",
+                benefits: [
+                    "La croissance du capital-décès est pratiquement garantie grâce à la participation aux excédents",
+                    "Croissance à l'abri de l'impôt — un outil de gestion de patrimoine autant que de protection",
+                    "Valeur de rachat qui devient une réserve de liquidité mobilisable de votre vivant"
+                ],
+                strategies: [
+                    "Legs successoral qui croît avec le temps, souvent en franchise d'impôt pour vos bénéficiaires",
+                    "Prêt sur la valeur de rachat pour financer un projet, sans décaisser le capital",
+                    "Structure corporative pour sortir des liquidités excédentaires de la société efficacement"
+                ],
+                compare: { duree: 'À vie', prime: 'Fixe (base) + participation', rachat: 'Participative avec croissance exponentielle', capital: 'Croissance exponentielle aussi' }
+            },
+            'universal': {
+                label: 'Vie Universelle',
+                tagline: "Protection permanente flexible, avec un compte de placement que vous contrôlez.",
+                description: "Une protection à vie combinée à un compte de placement distinct, dont le rendement dépend des fonds que vous choisissez. Les primes et le montant de protection peuvent être ajustés selon vos moyens et vos objectifs.",
+                benefits: [
+                    "Flexibilité maximale — ajustez primes et protection selon votre situation",
+                    "Choix des placements : taux garanti, fonds indiciels, fonds distincts",
+                    "Abri fiscal puissant, particulièrement utile pour les entreprises incorporées"
+                ],
+                strategies: [
+                    "Stratégie de gel successoral pour entrepreneurs",
+                    "Maximisation de l'abri fiscal via une société, au-delà du REER et du CELI",
+                    "Planification de la relève d'entreprise"
+                ],
+                compare: { duree: 'À vie', prime: 'Ajustable / flexible', rachat: 'Liée aux placements choisis', capital: 'Ajustable' }
+            }
+        };
+
+        const IC_COMPARE_ROWS = [
+            ['duree', 'Durée'],
+            ['prime', 'Prime'],
+            ['rachat', 'Valeur de rachat'],
+            ['capital', 'Capital-décès']
+        ];
+
+        let icCurrent = 'temp';
+
+        const IC_ZONE_INFO = {
+            'temp': {
+                caption: "La protection temporaire répond directement aux « besoins temporaires » du graphique — protection des dettes, maintien du niveau de vie, étude des enfants."
+            },
+            'wholelife': {
+                caption: "La protection permanente répond aussi bien aux « derniers frais » qu'aux « besoins successoraux » — une protection à vie, garantie, peu importe le besoin visé."
+            },
+            'iapar': {
+                caption: "La croissance participative sert avant tout vos « besoins successoraux » — transfert d'entreprise, impôts au décès, héritage — tout en continuant de couvrir les « derniers frais »."
+            },
+            'universal': {
+                caption: "La vie universelle est structurée pour répondre à vos « besoins successoraux » — transfert de patrimoine et planification successorale avancée."
+            }
+        };
+
+        /* Highlight intensity per zone, per product: 1 = zone principale, 0.55 = zone secondaire, 0.2 = estompée */
+        const IC_ZONE_LEVELS = {
+            'temp':      { temporaires: 1,    successoraux: 0.2, derniersfrais: 0.2 },
+            'wholelife': { temporaires: 0.2,  successoraux: 1,   derniersfrais: 1   },
+            'iapar':     { temporaires: 0.2,  successoraux: 1,   derniersfrais: 0.55 },
+            'universal': { temporaires: 0.2,  successoraux: 1,   derniersfrais: 0.2 }
+        };
+
+        function icZoneSwatch(color, label, level) {
+            const active = level >= 0.5;
+            return `<div class="flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-full flex-shrink-0" style="background:${color}; opacity:${active ? 1 : 0.35}"></span><span class="text-xs ${level >= 0.9 ? 'text-white font-medium' : (active ? 'text-gray-300' : 'text-gray-500')}">${label}</span></div>`;
+        }
+
+        function icPath(pts, xPx, yPx) {
+            return pts.map((p, i) => (i === 0 ? 'M' : 'L') + xPx(p.x).toFixed(1) + ',' + yPx(p.y).toFixed(1)).join(' ');
+        }
+
+        function icAreaPath(pts, xPx, yPx) {
+            const baseline = yPx(0);
+            let d = `M${xPx(pts[0].x).toFixed(1)},${baseline.toFixed(1)} `;
+            d += pts.map(p => `L${xPx(p.x).toFixed(1)},${yPx(p.y).toFixed(1)}`).join(' ');
+            d += ` L${xPx(pts[pts.length - 1].x).toFixed(1)},${baseline.toFixed(1)} Z`;
+            return d;
+        }
+
+        function icWedgePath(basePts, topPts, xPx, yPx) {
+            let d = `M${xPx(basePts[0].x).toFixed(1)},${yPx(basePts[0].y).toFixed(1)} `;
+            d += topPts.map(p => `L${xPx(p.x).toFixed(1)},${yPx(p.y).toFixed(1)}`).join(' ');
+            const last = basePts[basePts.length - 1];
+            d += ` L${xPx(last.x).toFixed(1)},${yPx(last.y).toFixed(1)} Z`;
+            return d;
+        }
+
+        function icSwatch(color, style, label) {
+            let bg;
+            if (style === 'solid') bg = `background:${color};`;
+            else if (style === 'dashed') bg = `background-image: repeating-linear-gradient(to right, ${color} 0 6px, transparent 6px 10px);`;
+            else bg = `background-image: repeating-linear-gradient(to right, ${color} 0 2px, transparent 2px 5px); opacity: 0.7;`;
+            return `<div class="flex items-center gap-2"><span class="inline-block w-4 h-[3px] rounded-full flex-shrink-0" style="${bg}"></span><span class="text-gray-400 text-xs">${label}</span></div>`;
+        }
+
+        function renderICChart(key) {
+            const svgEl = document.getElementById('ic-chart-svg');
+            const wrap = document.getElementById('ic-chart-wrap');
+            if (!svgEl || !wrap) return;
+            const wrapWidth = Math.max(260, (wrap.clientWidth || 600) - 32);
+            const isNarrow = wrapWidth < 420;
+
+            const VB_W = 640, VB_H = 230;
+            const MARGIN_L = isNarrow ? 16 : 20;
+            const MARGIN_R = 16;
+            const MARGIN_T = 16;
+            const MARGIN_B = 26;
+            const PLOT_W = VB_W - MARGIN_L - MARGIN_R;
+            const PLOT_H = VB_H - MARGIN_T - MARGIN_B;
+            const DOM_MAX = 90;
+            const Y_MAX = 1.6;
+
+            const xPx = x => MARGIN_L + (x / DOM_MAX) * PLOT_W;
+            const yPx = y => MARGIN_T + PLOT_H - (y / Y_MAX) * PLOT_H;
+
+            let svg = '';
+            svg += `<defs>
+                <linearGradient id="ic-grad-silver" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#C0C0C0" stop-opacity="0.42"/>
+                    <stop offset="100%" stop-color="#C0C0C0" stop-opacity="0.03"/>
+                </linearGradient>
+                <linearGradient id="ic-grad-gold" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.55"/>
+                    <stop offset="100%" stop-color="#D4AF37" stop-opacity="0.06"/>
+                </linearGradient>
+                <linearGradient id="ic-grad-neutral" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#9a9a9a" stop-opacity="0.4"/>
+                    <stop offset="100%" stop-color="#9a9a9a" stop-opacity="0.03"/>
+                </linearGradient>
+            </defs>`;
+            [0, 0.4, 0.8, 1.2, 1.6].forEach(gv => {
+                const y = yPx(gv);
+                svg += `<line x1="${MARGIN_L}" y1="${y.toFixed(1)}" x2="${VB_W - MARGIN_R}" y2="${y.toFixed(1)}" stroke="#262626" stroke-width="1"/>`;
+            });
+            [0, 10, 20, 30, 40, 50, 60, 70, 80, 90].forEach(xv => {
+                const x = xPx(xv);
+                svg += `<text x="${x.toFixed(1)}" y="${VB_H - 6}" fill="#7a7a7a" font-size="10" text-anchor="middle" font-family="Inter, sans-serif">${xv}</text>`;
+            });
+            svg += `<line x1="${MARGIN_L}" y1="${VB_H - MARGIN_B}" x2="${VB_W - MARGIN_R}" y2="${VB_H - MARGIN_B}" stroke="#3a3a3a" stroke-width="1"/>`;
+
+            /* Shared "évolution des besoins" zones — same shape every time, only the highlight changes */
+            const dfPts = [{ x: 0, y: 0.07 }, { x: 90, y: 0.6 }];
+            const tempPts = [];
+            for (let a = 18; a <= 72; a += 3) {
+                const diff = a - 46;
+                tempPts.push({ x: a, y: 0.05 + 1.05 * Math.exp(-(diff * diff) / (2 * 12 * 12)) });
+            }
+            const succPts = [{ x: 62, y: 0.05 }, { x: 90, y: 1.4 }];
+
+            const levels = IC_ZONE_LEVELS[key] || IC_ZONE_LEVELS['temp'];
+
+            /* A zone only gets a crisp outline when it's the (or a) primary/secondary focus —
+               a dimmed zone is soft fill only, so no stray line ever cuts across another curve. */
+            function drawZone(areaPts, gradId, strokeColor, level) {
+                svg += `<path d="${icAreaPath(areaPts, xPx, yPx)}" fill="url(#${gradId})" opacity="${level}"/>`;
+                if (level >= 0.5) {
+                    const bold = level >= 0.9;
+                    svg += `<path d="${icPath(areaPts, xPx, yPx)}" fill="none" stroke="${strokeColor}" stroke-width="${bold ? 2.5 : 1.8}" stroke-linejoin="round" stroke-linecap="round" opacity="${bold ? 0.95 : 0.65}"/>`;
+                }
+            }
+
+            drawZone(dfPts, 'ic-grad-neutral', '#9a9a9a', levels.derniersfrais);
+            drawZone(tempPts, 'ic-grad-silver', '#C0C0C0', levels.temporaires);
+            drawZone(succPts, 'ic-grad-gold', '#D4AF37', levels.successoraux);
+
+            function labelStyle(level, brightColor) {
+                if (level >= 0.9) return { fill: brightColor, size: 12, weight: 600 };
+                if (level >= 0.5) return { fill: brightColor, size: 10, weight: 500 };
+                return { fill: '#6a6a6a', size: 10, weight: 400 };
+            }
+            const tempLbl = labelStyle(levels.temporaires, '#ffffff');
+            const succLbl = labelStyle(levels.successoraux, '#D4AF37');
+            const dfLbl = labelStyle(levels.derniersfrais, '#e0e0e0');
+
+            svg += `<text x="${xPx(44).toFixed(1)}" y="${yPx(0.58).toFixed(1)}" fill="${tempLbl.fill}" font-size="${tempLbl.size}" font-weight="${tempLbl.weight}" text-anchor="middle" font-family="Inter, sans-serif">Besoins temporaires</text>`;
+            svg += `<text x="${xPx(82).toFixed(1)}" y="${yPx(0.78).toFixed(1)}" fill="${succLbl.fill}" font-size="${succLbl.size}" font-weight="${succLbl.weight}" text-anchor="middle" font-family="Inter, sans-serif">Besoins successoraux</text>`;
+            svg += `<text x="${xPx(76).toFixed(1)}" y="${yPx(0.2).toFixed(1)}" fill="${dfLbl.fill}" font-size="${dfLbl.size}" font-weight="${dfLbl.weight}" text-anchor="middle" font-family="Inter, sans-serif">Derniers frais</text>`;
+
+            svgEl.setAttribute('viewBox', `0 0 ${VB_W} ${VB_H}`);
+            svgEl.innerHTML = svg;
+
+            const legendEl = document.getElementById('ic-chart-legend');
+            if (legendEl) {
+                legendEl.innerHTML =
+                    icZoneSwatch('#C0C0C0', 'Besoins temporaires', levels.temporaires) +
+                    icZoneSwatch('#D4AF37', 'Besoins successoraux', levels.successoraux) +
+                    icZoneSwatch('#9a9a9a', 'Derniers frais', levels.derniersfrais);
+            }
+        }
+
+        function renderICCompareTable(selected) {
+            let html = '<div class="overflow-x-auto"><div class="min-w-[560px]">';
+            html += '<div class="grid grid-cols-5">';
+            html += '<div class="px-3 py-2.5 bg-brand-darker/60"></div>';
+            IC_ORDER.forEach(k => {
+                const active = k === selected;
+                html += `<div class="px-3 py-2.5 text-center font-semibold uppercase tracking-wide ${active ? 'bg-brand-silver text-brand-darker' : 'bg-brand-darker/60 text-gray-400'}">${IC_TYPES[k].label}</div>`;
+            });
+            html += '</div>';
+            IC_COMPARE_ROWS.forEach(([key, label]) => {
+                html += `<div class="grid grid-cols-5 border-t border-brand-gray/40">`;
+                html += `<div class="px-3 py-2.5 text-gray-500">${label}</div>`;
+                IC_ORDER.forEach(k => {
+                    const active = k === selected;
+                    html += `<div class="px-3 py-2.5 text-center ${active ? 'text-white font-medium bg-brand-silver/10' : 'text-gray-400'}">${IC_TYPES[k].compare[key]}</div>`;
+                });
+                html += '</div>';
+            });
+            html += '</div></div>';
+            const el = document.getElementById('ic-compare-table');
+            if (el) el.innerHTML = html;
+        }
+
+        function renderICTab(key) {
+            icCurrent = key;
+            const d = IC_TYPES[key];
+            if (!d) return;
+
+            document.querySelectorAll('#ic-tabs .ic-tab').forEach(b => b.classList.toggle('active', b.dataset.ictype === key));
+            document.getElementById('ic-tagline').textContent = d.tagline;
+            document.getElementById('ic-description').textContent = d.description;
+
+            const benefitsEl = document.getElementById('ic-benefits');
+            benefitsEl.innerHTML = '';
+            d.benefits.forEach(pt => {
+                const li = document.createElement('li');
+                li.className = 'flex items-start';
+                li.innerHTML = '<span class="text-brand-silver mr-2.5 mt-0.5 flex-shrink-0">✦</span><span>' + pt + '</span>';
+                benefitsEl.appendChild(li);
+            });
+
+            const stratEl = document.getElementById('ic-strategies');
+            stratEl.innerHTML = '';
+            d.strategies.forEach(pt => {
+                const li = document.createElement('li');
+                li.className = 'flex items-start';
+                li.innerHTML = '<span class="mr-2.5 mt-0.5 flex-shrink-0" style="color:#D4AF37;">✦</span><span>' + pt + '</span>';
+                stratEl.appendChild(li);
+            });
+
+            const zoneCaptionEl = document.getElementById('ic-zone-caption');
+            if (zoneCaptionEl) zoneCaptionEl.textContent = (IC_ZONE_INFO[key] || {}).caption || '';
+
+            renderICChart(key);
+            renderICCompareTable(key);
+        }
+
+        document.querySelectorAll('#ic-tabs .ic-tab').forEach(btn => {
+            btn.addEventListener('click', () => renderICTab(btn.dataset.ictype));
+        });
+
+        let icResizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(icResizeTimer);
+            icResizeTimer = setTimeout(() => {
+                const comparatorEl = document.getElementById('service-modal-comparator');
+                if (comparatorEl && !comparatorEl.classList.contains('hidden')) renderICChart(icCurrent);
+            }, 150);
+        });
+
+        /* ═════ RETRAITE — LEVIERS DE DÉCAISSEMENT ═════ */
+        const RT_TYPES = {
+            'ordre': {
+                label: 'Décaissement',
+                tagline: "Dans quel ordre retirer vos comptes pour payer le moins d'impôt possible.",
+                description: "Retirer ses comptes dans le mauvais ordre peut coûter des dizaines de milliers de dollars en impôt sur l'ensemble d'une retraite. La bonne séquence dépend de votre âge, vos revenus et les types de comptes que vous détenez.",
+                points: [
+                    "Non enregistré et CELI souvent utilisés en premier pour laisser croître le REER à l'abri de l'impôt",
+                    "REER/FERR décaissé de façon à éviter de sauter dans une tranche d'imposition plus élevée",
+                    "La séquence est ajustée chaque année selon vos besoins réels, pas fixée d'avance"
+                ]
+            },
+            'fractionnement': {
+                label: 'Fractionnement',
+                tagline: "Diviser le revenu de retraite entre conjoints pour réduire la facture fiscale du couple.",
+                description: "Un couple peut souvent réduire son impôt total simplement en répartissant certains revenus de retraite entre les deux conjoints, plutôt que de tout concentrer chez une seule personne.",
+                points: [
+                    "Fractionnement du revenu de pension admissible jusqu'à 50 % entre conjoints",
+                    "Réduit le risque de récupération de la pension de la Sécurité de la vieillesse",
+                    "Particulièrement avantageux quand les revenus des conjoints sont très différents"
+                ]
+            },
+            'gouvernement': {
+                label: 'RRQ / PSV',
+                tagline: "Quand commencer à recevoir vos rentes pour maximiser votre revenu net à vie.",
+                description: "Le moment où vous demandez le RRQ et la PSV change significativement le montant reçu. Retarder augmente la rente de façon permanente — mais ce n'est pas toujours le bon choix pour tout le monde.",
+                points: [
+                    "RRQ : jusqu'à 8,4 % de rente additionnelle par année de report après 65 ans",
+                    "PSV : jusqu'à 7,2 % de rente additionnelle par année de report, jusqu'à 70 ans",
+                    "Le bon moment dépend de votre santé, vos autres revenus et vos besoins immédiats"
+                ]
+            },
+            'succession': {
+                label: 'Transfert',
+                tagline: "Minimiser l'impôt au décès et transmettre davantage à vos héritiers.",
+                description: "Au décès, le REER/FERR est généralement imposé comme un revenu en un seul coup — souvent le montant le plus élevé jamais déclaré. Une bonne planification réduit cet impact et simplifie le transfert.",
+                points: [
+                    "Roulement au conjoint survivant pour reporter l'impôt",
+                    "Bénéficiaires désignés pour éviter les délais et frais d'homologation",
+                    "Assurance vie utilisée pour couvrir l'impôt au décès, sans réduire l'héritage net transmis"
+                ]
+            }
+        };
+
+        let rtCurrent = 'ordre';
+
+        function renderRTTab(key) {
+            rtCurrent = key;
+            const d = RT_TYPES[key];
+            if (!d) return;
+
+            document.querySelectorAll('#rt-tabs .ic-tab').forEach(b => b.classList.toggle('active', b.dataset.rttype === key));
+            document.getElementById('rt-tagline').textContent = d.tagline;
+            document.getElementById('rt-description').textContent = d.description;
+
+            const pointsEl = document.getElementById('rt-points');
+            pointsEl.innerHTML = '';
+            d.points.forEach(pt => {
+                const li = document.createElement('li');
+                li.className = 'flex items-start';
+                li.innerHTML = '<span class="text-brand-silver mr-2.5 mt-0.5 flex-shrink-0">✦</span><span>' + pt + '</span>';
+                pointsEl.appendChild(li);
+            });
+        }
+
+        document.querySelectorAll('#rt-tabs .ic-tab').forEach(btn => {
+            btn.addEventListener('click', () => renderRTTab(btn.dataset.rttype));
+        });
 
         const modal = document.getElementById('service-modal');
         const panel = document.getElementById('service-modal-panel');
@@ -1199,6 +1617,16 @@
             });
 
             document.getElementById('service-modal-sim-link').classList.toggle('hidden', !data.showSim);
+
+            document.getElementById('service-modal-list').classList.toggle('hidden', !!data.comparator || !!data.retraiteOptions);
+            document.getElementById('service-modal-comparator').classList.toggle('hidden', !data.comparator);
+            document.getElementById('service-modal-retraite').classList.toggle('hidden', !data.retraiteOptions);
+            if (data.comparator) {
+                renderICTab('temp');
+            }
+            if (data.retraiteOptions) {
+                renderRTTab('ordre');
+            }
 
             lastFocused = document.activeElement;
             modal.classList.remove('hidden');
