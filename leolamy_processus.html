@@ -223,9 +223,9 @@
             </a>
 
             <nav class="hidden md:flex space-x-10">
+                <a href="/#apropos" class="text-sm font-medium text-gray-400 hover:text-white transition-colors tracking-wide uppercase">À propos</a>
                 <a href="/#services" class="text-sm font-medium text-gray-400 hover:text-white transition-colors tracking-wide uppercase">Expertises</a>
                 <a href="/#simulateur" class="text-sm font-medium text-gray-400 hover:text-white transition-colors tracking-wide uppercase">Simulateur</a>
-                <a href="/#apropos" class="text-sm font-medium text-gray-400 hover:text-white transition-colors tracking-wide uppercase">À propos</a>
             </nav>
             <div class="hidden md:block">
                 <a href="/#contact" class="inline-flex items-center justify-center px-6 py-3 border border-brand-silver text-sm font-medium rounded text-brand-darker bg-brand-silver hover:bg-white hover:border-white transition-all duration-300 uppercase tracking-widest shine-btn relative overflow-hidden">
@@ -241,9 +241,9 @@
         </div>
 
         <div id="mobile-menu" class="fixed inset-0 bg-brand-darker/95 backdrop-blur-xl z-40 hidden flex-col items-center justify-center space-y-10 opacity-0 transition-opacity duration-300">
+            <a href="/#apropos" class="mobile-link font-serif text-3xl text-brand-silver hover:text-white uppercase tracking-widest transition-colors">À propos</a>
             <a href="/#services" class="mobile-link font-serif text-3xl text-brand-silver hover:text-white uppercase tracking-widest transition-colors">Expertises</a>
             <a href="/#simulateur" class="mobile-link font-serif text-3xl text-brand-silver hover:text-white uppercase tracking-widest transition-colors">Simulateur</a>
-            <a href="/#apropos" class="mobile-link font-serif text-3xl text-brand-silver hover:text-white uppercase tracking-widest transition-colors">À propos</a>
             <a href="/#contact" class="mobile-link mt-8 px-8 py-4 border border-brand-silver text-brand-darker bg-brand-silver font-bold uppercase tracking-widest rounded shine-btn relative overflow-hidden text-center w-3/4 max-w-xs">
                 Prendre Rendez-vous
             </a>
@@ -471,10 +471,10 @@
            réservé "Vidéo à venir" s'affiche automatiquement.
            ═══════════════════════════════════════════════ */
         const PROCESS_VIDEOS = {
-            etape1: { mp4: '', youtubeId: '', poster: '' },
-            etape2: { mp4: '', youtubeId: '', poster: '' },
-            etape3: { mp4: '', youtubeId: '', poster: '' },
-            etape4: { mp4: '', youtubeId: '', poster: '' }
+            etape1: { mp4: 'videos/etape-1-decouverte.mp4',   youtubeId: '', poster: 'videos/etape-1-decouverte.jpg' },
+            etape2: { mp4: 'videos/etape-2-analyse.mp4',      youtubeId: '', poster: 'videos/etape-2-analyse.jpg' },
+            etape3: { mp4: 'videos/etape-3-presentation.mp4', youtubeId: '', poster: 'videos/etape-3-presentation.jpg' },
+            etape4: { mp4: 'videos/etape-4-suivi.mp4',        youtubeId: '', poster: 'videos/etape-4-suivi.jpg' }
         };
 
         document.querySelectorAll('.process-video').forEach(el => {
